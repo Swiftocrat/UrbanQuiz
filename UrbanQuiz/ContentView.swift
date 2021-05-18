@@ -14,14 +14,16 @@ struct ContentView: View {
     var body: some View {
 
       VStack(alignment: .center) {
+        Spacer()
         Image("tram")
           .resizable()
           .frame(width: 300, height: 170, alignment: .top)
           .padding(.top, -10)
           .scaledToFill()
+        Spacer()
         Text("Чи трамвай може бути альтернативою метро?")
           .bold()
-        //Spacer(minLength: 5)
+        Spacer()
         ForEach(answers, id: \.self) { answer in
           Button(answer) {
             print("some shit")
@@ -32,6 +34,7 @@ struct ContentView: View {
           .cornerRadius(15)
 
         }
+        Spacer()
       }
         
     }
