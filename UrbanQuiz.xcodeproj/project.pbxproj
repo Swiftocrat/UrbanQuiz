@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58D95A8B265426C00070BF5D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D95A8A265426C00070BF5D /* Settings.swift */; };
+		58EC039626542BC10064A862 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EC039526542BC10064A862 /* SettingsItem.swift */; };
 		8940670B26540F120075DBC9 /* UrbanQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940670A26540F120075DBC9 /* UrbanQuizApp.swift */; };
 		8940670D26540F120075DBC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940670C26540F120075DBC9 /* ContentView.swift */; };
 		8940670F26540F150075DBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8940670E26540F150075DBC9 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58D95A8A265426C00070BF5D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		58EC039526542BC10064A862 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		8940670726540F120075DBC9 /* UrbanQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8940670A26540F120075DBC9 /* UrbanQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanQuizApp.swift; sourceTree = "<group>"; };
 		8940670C26540F120075DBC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58D95A89265426B10070BF5D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				58D95A8A265426C00070BF5D /* Settings.swift */,
+				58EC039526542BC10064A862 /* SettingsItem.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		894066FE26540F120075DBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 				8940670C26540F120075DBC9 /* ContentView.swift */,
 				8940670E26540F150075DBC9 /* Assets.xcassets */,
 				8940671326540F150075DBC9 /* Info.plist */,
+				58D95A89265426B10070BF5D /* Settings */,
 				8940671026540F150075DBC9 /* Preview Content */,
 				894067362654261C0075DBC9 /* QuizButtonView.swift */,
 			);
@@ -141,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D95A8B265426C00070BF5D /* Settings.swift in Sources */,
+				58EC039626542BC10064A862 /* SettingsItem.swift in Sources */,
 				8940670D26540F120075DBC9 /* ContentView.swift in Sources */,
 				894067372654261C0075DBC9 /* QuizButtonView.swift in Sources */,
 				8940670B26540F120075DBC9 /* UrbanQuizApp.swift in Sources */,
