@@ -25,14 +25,9 @@ struct ContentView: View {
           .bold()
         Spacer()
         ForEach(answers, id: \.self) { answer in
-          Button(answer) {
-            print("some shit")
+          QuizButtonView(title: answer) {
+            print("action")
           }
-          .padding()
-          .background(Color.orange)
-          .foregroundColor(.black)
-          .cornerRadius(15)
-
         }
         Spacer()
       }
