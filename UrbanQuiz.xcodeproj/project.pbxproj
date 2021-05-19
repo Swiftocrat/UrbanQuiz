@@ -12,6 +12,9 @@
 		8940670F26540F150075DBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8940670E26540F150075DBC9 /* Assets.xcassets */; };
 		8940671226540F150075DBC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8940671126540F150075DBC9 /* Preview Assets.xcassets */; };
 		894067372654261C0075DBC9 /* QuizButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894067362654261C0075DBC9 /* QuizButtonView.swift */; };
+		8940674526542DA40075DBC9 /* PersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940674426542DA40075DBC9 /* PersistantContainer.swift */; };
+		8940674D26542F4C0075DBC9 /* Quiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8940674B26542F4C0075DBC9 /* Quiz.xcdatamodeld */; };
+		8940675026552BEC0075DBC9 /* QuestionsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940674F26552BEC0075DBC9 /* QuestionsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8940671126540F150075DBC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8940671326540F150075DBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894067362654261C0075DBC9 /* QuizButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizButtonView.swift; sourceTree = "<group>"; };
+		8940674426542DA40075DBC9 /* PersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantContainer.swift; sourceTree = "<group>"; };
+		8940674C26542F4C0075DBC9 /* Question.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Question.xcdatamodel; sourceTree = "<group>"; };
+		8940674F26552BEC0075DBC9 /* QuestionsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +65,8 @@
 				8940670E26540F150075DBC9 /* Assets.xcassets */,
 				8940671326540F150075DBC9 /* Info.plist */,
 				8940671026540F150075DBC9 /* Preview Content */,
-				894067362654261C0075DBC9 /* QuizButtonView.swift */,
+				8940674826542F0A0075DBC9 /* Views */,
+				8940674726542F010075DBC9 /* Data */,
 			);
 			path = UrbanQuiz;
 			sourceTree = "<group>";
@@ -70,6 +77,24 @@
 				8940671126540F150075DBC9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8940674726542F010075DBC9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8940674B26542F4C0075DBC9 /* Quiz.xcdatamodeld */,
+				8940674426542DA40075DBC9 /* PersistantContainer.swift */,
+				8940674F26552BEC0075DBC9 /* QuestionsStorage.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8940674826542F0A0075DBC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				894067362654261C0075DBC9 /* QuizButtonView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8940670D26540F120075DBC9 /* ContentView.swift in Sources */,
+				8940675026552BEC0075DBC9 /* QuestionsStorage.swift in Sources */,
+				8940674526542DA40075DBC9 /* PersistantContainer.swift in Sources */,
 				894067372654261C0075DBC9 /* QuizButtonView.swift in Sources */,
+				8940674D26542F4C0075DBC9 /* Quiz.xcdatamodeld in Sources */,
 				8940670B26540F120075DBC9 /* UrbanQuizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8940674B26542F4C0075DBC9 /* Quiz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8940674C26542F4C0075DBC9 /* Question.xcdatamodel */,
+			);
+			currentVersion = 8940674C26542F4C0075DBC9 /* Question.xcdatamodel */;
+			path = Quiz.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 894066FF26540F120075DBC9 /* Project object */;
 }
