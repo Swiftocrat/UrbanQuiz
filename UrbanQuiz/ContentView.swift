@@ -33,7 +33,7 @@ struct ContentView: View {
             if answer == questions[0].correct {
               let _ = print("correct")
             } else {
-              let _ = print("error")
+              let _ = print("wrong")
             }
           }
         }
