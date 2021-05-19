@@ -24,6 +24,7 @@ struct OrangeButton: ButtonStyle {
 
 struct QuizButtonView: View {
   var title: String
+  var position: Int
   var action: () -> Void
   
   var body: some View {
