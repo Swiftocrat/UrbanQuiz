@@ -53,7 +53,9 @@ struct ContentView: View {
           print("Next question")
           self.buttonsDisabled = false
           self.currentPosition = 5
-          self.currentQuestion += self.currentQuestion == 0 ? 2 : 1
+          if currentQuestion < questions.count - 1 {
+            self.currentQuestion += self.currentQuestion == 0 ? 2 : 1
+          }
         }
       }
     }
