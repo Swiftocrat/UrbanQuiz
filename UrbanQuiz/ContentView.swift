@@ -14,6 +14,7 @@ struct ContentView: View {
   @Environment(\.managedObjectContext) var mock
   @State private var buttonsDisabled = false
   @State private var currentPosition = 5
+  @State private var currentQuestion = 0
   
   var body: some View {
     VStack(alignment: .center) {
@@ -24,11 +25,11 @@ struct ContentView: View {
         .padding(.top, -10)
         .scaledToFill()
       Spacer()
-      Text(questions[0].body!)
+      Text(questions[currentQuestion].body!)
         .bold()
       Spacer()
       ForEach(0...3, id: \.self) { answer in
-        QuizButtonView(title: questions[0].answers![answer], position: answer, correctIndex: Int(questions[0].correct), didTap: self.buttonsDisabled, currentIndex: self.currentPosition) {
+        QuizButtonView(title: questions[currentQuestion].answers![answer], position: answer, correctIndex: Int(questions[currentQuestion].correct), didTap: self.buttonsDisabled, currentIndex: self.currentPosition) {
           buttonsDisabled = true
           currentPosition = answer
         }
@@ -37,7 +38,7 @@ struct ContentView: View {
       Spacer()
       Button(action: {}) {
         HStack {
-          Text("Next")
+          Text("Наступне питання")
             .foregroundColor(Color.black)
           Image(systemName:"arrowshape.zigzag.right.fill")
             .foregroundColor(Color.orange)
@@ -50,6 +51,9 @@ struct ContentView: View {
         .isHidden(!buttonsDisabled)
         .onTapGesture {
           print("Next question")
+          self.buttonsDisabled = false
+          self.currentPosition = 5
+          self.currentQuestion += self.currentQuestion == 0 ? 2 : 1
         }
       }
     }
@@ -65,12 +69,12 @@ struct ContentView_Previews: PreviewProvider {
 // Question saving example
 //
 //
-// let ss = Question(context: self.moc)
-// ss.body = "Чи трамвай може бути альтернативою метро?"
-// ss.id = questions[0].id
-// ss.answers = ["Ні, не може бути","У випадку, коли метро задороге", "У випадку, коли грунт поганий","Так, може бути завжди"]
-// ss.correct = 0
-// try? self.mock.save()
+//let ss = Question(context: self.mock)
+//     ss.body = "Хто має бути в пріоритеті містобудування?"
+//     ss.id = UUID()
+//     ss.answers = ["Приватні авто","Велосипедисти", "Пішоходи","Всі рівні"]
+//     ss.correct = 2
+//     try? self.mock.save()
 
 
 
