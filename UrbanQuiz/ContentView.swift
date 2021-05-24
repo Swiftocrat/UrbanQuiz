@@ -9,44 +9,57 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-  @FetchRequest(
-     entity: Question.entity(),
-     sortDescriptors: []
-   ) var questions: FetchedResults<Question>
+  @FetchRequest(entity: Question.entity(), sortDescriptors: [])
+  var questions: FetchedResults<Question>
   @Environment(\.managedObjectContext) var mock
+  @State private var buttonsDisabled = false
+  @State private var currentPosition = 5
   
-    var body: some View {
-      VStack(alignment: .center) {
-        
-        Spacer()
-        Image("tram")
-          .resizable()
-          .frame(width: 300, height: 170, alignment: .top)
-          .padding(.top, -10)
-          .scaledToFill()
-        Spacer()
-        Text(questions[0].body!)
-          .bold()
-        Spacer()
-        ForEach(0...3, id: \.self) { answer in
-          QuizButtonView(title: questions[0].answers![answer], position: answer) {
-            if answer == questions[0].correct {
-              let _ = print("correct")
-            } else {
-              let _ = print("wrong")
-            }
-          }
+  var body: some View {
+    VStack(alignment: .center) {
+      Spacer()
+      Image("tram")
+        .resizable()
+        .frame(width: 300, height: 170, alignment: .top)
+        .padding(.top, -10)
+        .scaledToFill()
+      Spacer()
+      Text(questions[0].body!)
+        .bold()
+      Spacer()
+      ForEach(0...3, id: \.self) { answer in
+        QuizButtonView(title: questions[0].answers![answer], position: answer, correctIndex: Int(questions[0].correct), didTap: self.buttonsDisabled, currentIndex: self.currentPosition) {
+          buttonsDisabled = true
+          currentPosition = answer
         }
-        Spacer()
+        .disabled(buttonsDisabled)
       }
-        
+      Spacer()
+      Button(action: {}) {
+        HStack {
+          Text("Next")
+            .foregroundColor(Color.black)
+          Image(systemName:"arrowshape.zigzag.right.fill")
+            .foregroundColor(Color.orange)
+        }
+        .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.orange, lineWidth: 3)
+            )
+        .isHidden(!buttonsDisabled)
+        .onTapGesture {
+          print("Next question")
+        }
+      }
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
 
 // Question saving example
@@ -58,3 +71,6 @@ struct ContentView_Previews: PreviewProvider {
 // ss.answers = ["Ні, не може бути","У випадку, коли метро задороге", "У випадку, коли грунт поганий","Так, може бути завжди"]
 // ss.correct = 0
 // try? self.mock.save()
+
+
+
