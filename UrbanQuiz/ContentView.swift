@@ -19,7 +19,7 @@ struct ContentView: View {
   var body: some View {
     VStack(alignment: .center) {
       Spacer()
-      Image("tram")
+      Image(uiImage: UIImage(data: questions[currentQuestion].image!)!)
         .resizable()
         .frame(width: 300, height: 170, alignment: .top)
         .padding(.top, -10)
@@ -44,17 +44,20 @@ struct ContentView: View {
             .foregroundColor(Color.orange)
         }
         .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.orange, lineWidth: 3)
-            )
+        .overlay(
+          RoundedRectangle(cornerRadius: 25)
+            .stroke(Color.orange, lineWidth: 3)
+        )
         .isHidden(!buttonsDisabled)
         .onTapGesture {
           print("Next question")
+          
+          
           self.buttonsDisabled = false
           self.currentPosition = 5
           if currentQuestion < questions.count - 1 {
-            self.currentQuestion += self.currentQuestion == 0 ? 2 : 1
+            // self.currentQuestion += self.currentQuestion == 0 ? 2 : 1
+            self.currentQuestion += 1
           }
         }
       }
@@ -71,12 +74,22 @@ struct ContentView_Previews: PreviewProvider {
 // Question saving example
 //
 //
-//let ss = Question(context: self.mock)
-//     ss.body = "Хто має бути в пріоритеті містобудування?"
-//     ss.id = UUID()
-//     ss.answers = ["Приватні авто","Велосипедисти", "Пішоходи","Всі рівні"]
-//     ss.correct = 2
+//        let data = UIImage(named: "genplan")!.jpegData(compressionQuality: 1.0)
+//        let ss = Question(context: self.mock)
+//        ss.body = "Хто має бути в пріоритеті містобудування?"
+//        ss.id = UUID()
+//        ss.answers = ["Приватні авто","Велосипедисти", "Пішоходи","Всі рівні"]
+//        ss.correct = 2
+//        ss.image = data
 //     try? self.mock.save()
 
-
-
+// Deleting data from DB
+//for question in questions {
+//  mock.delete(question)
+//}
+//
+//do {
+//  try mock.save()
+//} catch {
+//  // handle the Core Data error
+//}
