@@ -18,6 +18,7 @@
 		8940674D26542F4C0075DBC9 /* Quiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8940674B26542F4C0075DBC9 /* Quiz.xcdatamodeld */; };
 		8940675026552BEC0075DBC9 /* QuestionsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940674F26552BEC0075DBC9 /* QuestionsStorage.swift */; };
 		8999EBC2265C23AC00347EEE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999EBC1265C23AC00347EEE /* ViewExtensions.swift */; };
+		8999EC57265D0BD400347EEE /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999EC56265D0BD400347EEE /* NextButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8940674C26542F4C0075DBC9 /* Question.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Question.xcdatamodel; sourceTree = "<group>"; };
 		8940674F26552BEC0075DBC9 /* QuestionsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsStorage.swift; sourceTree = "<group>"; };
 		8999EBC1265C23AC00347EEE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		8999EC56265D0BD400347EEE /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +77,13 @@
 		8940670926540F120075DBC9 /* UrbanQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				8999EBC0265C239D00347EEE /* Common */,
 				8940670A26540F120075DBC9 /* UrbanQuizApp.swift */,
 				8940670C26540F120075DBC9 /* ContentView.swift */,
 				8940670E26540F150075DBC9 /* Assets.xcassets */,
 				8940671326540F150075DBC9 /* Info.plist */,
 				58D95A89265426B10070BF5D /* Settings */,
 				8940671026540F150075DBC9 /* Preview Content */,
+				8999EBC0265C239D00347EEE /* Common */,
 				8940674826542F0A0075DBC9 /* Views */,
 				8940674726542F010075DBC9 /* Data */,
 			);
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				894067362654261C0075DBC9 /* QuizButtonView.swift */,
+				8999EC56265D0BD400347EEE /* NextButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				8940674D26542F4C0075DBC9 /* Quiz.xcdatamodeld in Sources */,
 				8999EBC2265C23AC00347EEE /* ViewExtensions.swift in Sources */,
 				8940670B26540F120075DBC9 /* UrbanQuizApp.swift in Sources */,
+				8999EC57265D0BD400347EEE /* NextButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
